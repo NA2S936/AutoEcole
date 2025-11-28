@@ -12,38 +12,26 @@ namespace autoEcoleEF
 {
     public partial class FrmGererEleve : Form
     {
-        public FrmGererEleve()
+        private autoecoleEntities mesDonneesEF;
+        public FrmGererEleve(autoecoleEntities mesDonneesEF)
         {
             InitializeComponent();
+            for (int i = 0; i < 30; i++)
+                this.cmbCredit.Items.Add(i);
+            this.mesDonneesEF = mesDonneesEF;
+            this.bdgSourceEleve.DataSource = this.mesDonneesEF.eleves.ToList();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmGererEleve_Load(object sender, EventArgs e)
         {
 
         }
 
-        public FrmGererEleve(autoecoleEntities mesDonneesEF)
-        {
-            InitializeComponent();
-            for (int i = 0; i < 30; i++)
-            {
-                this.cmbCredit.Items.Add((i); 
-            }
-        }
+       
     }
 }

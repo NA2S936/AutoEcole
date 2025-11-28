@@ -53,7 +53,7 @@
             this.leçonToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1235, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1235, 48);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,7 +62,7 @@
             this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quiterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(104, 36);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(104, 40);
             this.fichierToolStripMenuItem.Text = "Fichier";
             // 
             // quiterToolStripMenuItem
@@ -76,7 +76,7 @@
             this.elèveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gérerToolStripMenuItem});
             this.elèveToolStripMenuItem.Name = "elèveToolStripMenuItem";
-            this.elèveToolStripMenuItem.Size = new System.Drawing.Size(90, 36);
+            this.elèveToolStripMenuItem.Size = new System.Drawing.Size(90, 40);
             this.elèveToolStripMenuItem.Text = "Elève";
             // 
             // gérerToolStripMenuItem
@@ -84,6 +84,7 @@
             this.gérerToolStripMenuItem.Name = "gérerToolStripMenuItem";
             this.gérerToolStripMenuItem.Size = new System.Drawing.Size(205, 44);
             this.gérerToolStripMenuItem.Text = "Gérer";
+            this.gérerToolStripMenuItem.Click += new System.EventHandler(this.gérerToolStripMenuItem_Click);
             // 
             // véhiculeToolStripMenuItem
             // 
@@ -91,7 +92,7 @@
             this.gérerToolStripMenuItem1,
             this.véhiculeToolStripMenuItem1});
             this.véhiculeToolStripMenuItem.Name = "véhiculeToolStripMenuItem";
-            this.véhiculeToolStripMenuItem.Size = new System.Drawing.Size(124, 36);
+            this.véhiculeToolStripMenuItem.Size = new System.Drawing.Size(124, 40);
             this.véhiculeToolStripMenuItem.Text = "Véhicule";
             // 
             // gérerToolStripMenuItem1
@@ -112,7 +113,7 @@
             this.ajouterToolStripMenuItem,
             this.leçonToolStripMenuItem1});
             this.leçonToolStripMenuItem.Name = "leçonToolStripMenuItem";
-            this.leçonToolStripMenuItem.Size = new System.Drawing.Size(97, 36);
+            this.leçonToolStripMenuItem.Size = new System.Drawing.Size(97, 40);
             this.leçonToolStripMenuItem.Text = "Leçon";
             // 
             // ajouterToolStripMenuItem

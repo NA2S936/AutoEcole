@@ -14,17 +14,27 @@ namespace autoEcoleEF
     {
 
         private autoecoleEntities mesDonneesEF;
-
+      
         public FrmMenu()
         {
             InitializeComponent();
             mesDonneesEF = new autoecoleEntities();
         }
 
+        
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
+        private void gérerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGererEleve f = new FrmGererEleve(this.mesDonneesEF);
+            f.MdiParent = this;
+            f.Show();
+        }
+
+       
     }
 }
