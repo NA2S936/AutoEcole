@@ -39,9 +39,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtNum = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            this.txtAdresse = new System.Windows.Forms.TextBox();
+            this.dtInscription = new System.Windows.Forms.DateTimePicker();
             this.cmbCredit = new System.Windows.Forms.ComboBox();
             this.bdgNav = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -55,6 +55,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.Enregistrer = new System.Windows.Forms.ToolStripButton();
             this.bdgSourceEleve = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bdgNav)).BeginInit();
             this.bdgNav.SuspendLayout();
@@ -130,6 +131,7 @@
             this.txtNum.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdgSourceEleve, "id", true));
             this.txtNum.Location = new System.Drawing.Point(178, 161);
             this.txtNum.Name = "txtNum";
+            this.txtNum.ReadOnly = true;
             this.txtNum.Size = new System.Drawing.Size(382, 31);
             this.txtNum.TabIndex = 7;
             // 
@@ -141,28 +143,28 @@
             this.txtNom.Size = new System.Drawing.Size(382, 31);
             this.txtNom.TabIndex = 8;
             // 
-            // textBox3
+            // txtPrenom
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdgSourceEleve, "prenom", true));
-            this.textBox3.Location = new System.Drawing.Point(175, 368);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(382, 31);
-            this.textBox3.TabIndex = 9;
+            this.txtPrenom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdgSourceEleve, "prenom", true));
+            this.txtPrenom.Location = new System.Drawing.Point(175, 368);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(382, 31);
+            this.txtPrenom.TabIndex = 9;
             // 
-            // textBox4
+            // txtAdresse
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdgSourceEleve, "adresse", true));
-            this.textBox4.Location = new System.Drawing.Point(178, 455);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(379, 31);
-            this.textBox4.TabIndex = 10;
+            this.txtAdresse.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdgSourceEleve, "adresse", true));
+            this.txtAdresse.Location = new System.Drawing.Point(178, 455);
+            this.txtAdresse.Name = "txtAdresse";
+            this.txtAdresse.Size = new System.Drawing.Size(379, 31);
+            this.txtAdresse.TabIndex = 10;
             // 
-            // dateTimePicker2
+            // dtInscription
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(291, 547);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(266, 31);
-            this.dateTimePicker2.TabIndex = 12;
+            this.dtInscription.Location = new System.Drawing.Point(291, 547);
+            this.dtInscription.Name = "dtInscription";
+            this.dtInscription.Size = new System.Drawing.Size(266, 31);
+            this.dtInscription.TabIndex = 12;
             // 
             // cmbCredit
             // 
@@ -190,7 +192,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.Enregistrer});
             this.bdgNav.Location = new System.Drawing.Point(0, 0);
             this.bdgNav.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bdgNav.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -210,6 +213,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(46, 36);
             this.bindingNavigatorAddNewItem.Text = "Ajouter nouveau";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -288,6 +292,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 42);
             // 
+            // Enregistrer
+            // 
+            this.Enregistrer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.Enregistrer.Image = ((System.Drawing.Image)(resources.GetObject("Enregistrer.Image")));
+            this.Enregistrer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Enregistrer.Name = "Enregistrer";
+            this.Enregistrer.Size = new System.Drawing.Size(46, 36);
+            this.Enregistrer.Text = "Enregistrer";
+            this.Enregistrer.Click += new System.EventHandler(this.Enregistrer_Click);
+            // 
             // bdgSourceEleve
             // 
             this.bdgSourceEleve.DataSource = typeof(autoEcoleEF.eleve);
@@ -299,9 +313,9 @@
             this.ClientSize = new System.Drawing.Size(742, 782);
             this.Controls.Add(this.bdgNav);
             this.Controls.Add(this.cmbCredit);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.dtInscription);
+            this.Controls.Add(this.txtAdresse);
+            this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.txtNum);
             this.Controls.Add(this.label7);
@@ -334,9 +348,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox txtPrenom;
+        private System.Windows.Forms.TextBox txtAdresse;
+        private System.Windows.Forms.DateTimePicker dtInscription;
         private System.Windows.Forms.ComboBox cmbCredit;
         private System.Windows.Forms.BindingNavigator bdgNav;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
@@ -351,5 +365,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.BindingSource bdgSourceEleve;
+        private System.Windows.Forms.ToolStripButton Enregistrer;
     }
 }
